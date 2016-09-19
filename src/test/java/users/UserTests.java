@@ -13,18 +13,13 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 public class UserTests {
   @Test
-  public void shouldBeTrue() {
-    String str = "this";
-    assertEquals("this", str);
-  }
-
   public void shouldCreateNewUserObject() {
     String firstName = "Lennon";
     String lastName = "Chimbumu";
     String email = "lennon@us.gov";
     String role = "Jedi in Training";
 
-    User user = new User(firstName, lastName, email, role);
+    User user = new User(firstName, lastName, role, email);
 
     assertEquals(user.getFirstName(), firstName);
     assertEquals(user.getLastName(), lastName);
