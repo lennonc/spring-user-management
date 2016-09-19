@@ -2,6 +2,7 @@ package users;
 
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
+
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -15,5 +16,19 @@ public class UserTests {
   public void shouldBeTrue() {
     String str = "this";
     assertEquals("this", str);
+  }
+
+  public void shouldCreateNewUserObject() {
+    String firstName = "Lennon";
+    String lastName = "Chimbumu";
+    String email = "lennon@us.gov";
+    String role = "Jedi in Training";
+
+    User user = new User(firstName, lastName, email, role);
+
+    assertEquals(user.getFirstName(), firstName);
+    assertEquals(user.getLastName(), lastName);
+    assertEquals(user.getEmail(), email);
+    assertEquals(user.getRole(), role);
   }
 }

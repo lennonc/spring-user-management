@@ -16,12 +16,24 @@ public class User {
     this.email = email;
   }
 
-  public boolean save() throws Exception{
-    return true;
-  }
-
   public int count() {
     String query = "Select count(id) from users;";
     return 0;
+  }
+
+  public String getFirstName() {
+    return this.firstName;
+  }
+
+  public String getLastName() {
+    return this.lastName;
+  }
+
+  public String getEmail() {
+    return this.email;
+  }
+
+  public String getRole() {
+    return this.role;
   }
 }
