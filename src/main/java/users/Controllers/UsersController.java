@@ -25,7 +25,7 @@ public class UsersController {
   }
 
   @RequestMapping(value = "/users/new", method = RequestMethod.POST)
-  public User saveContact(@RequestBody User user) {
+  public User saveUser(@RequestBody User user) {
     userDAO.saveOrUpdate(user);
     return user;
   }

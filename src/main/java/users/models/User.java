@@ -67,14 +67,7 @@ public class User {
   public void setRole(String role) {
     this.role = role;
   }
-
-//   public static void getAllUsers() {
-//     String query = "Select * from users;";
-//     log.info(query);
-// ;
-//     jdbcTemplate.query(query, (rs, rowNum) -> new User(rs.getString("firstName"), rs.getString("lastName"), rs.getString("email"), rs.getString("role"))).forEach(user -> log.info(user.toString()));
-//   }
-
+  
   @Override
   public String toString() {
     String template = "User{firstName='%s', lastName='%s'}";
