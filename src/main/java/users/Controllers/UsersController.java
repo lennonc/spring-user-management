@@ -4,6 +4,7 @@ import java.util.List;
 import java.io.IOException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -24,7 +25,7 @@ public class UsersController {
   }
 
   @RequestMapping(value = "/users/new", method = RequestMethod.POST)
-  public ModelAndView saveContact(@RequestBody User user) {
+  public User saveContact(@RequestBody User user) {
     userDAO.saveOrUpdate(user);
     return user;
   }

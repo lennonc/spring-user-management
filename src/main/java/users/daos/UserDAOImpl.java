@@ -24,18 +24,18 @@ public class UserDAOImpl implements UserDAO {
   public void saveOrUpdate(User user) {
     if (user.getId() > 0) {
       // update
-      String query = "UPDATE contact SET firstName=?, lastName=?, email=?, + role=? WHERE id=?";
+      String query = "UPDATE users SET firstName=?, lastName=?, email=?, + role=? WHERE id=?";
       jdbcTemplate.update(query, user.getFirstName(), user.getLastName(), user.getEmail(), user.getRole(), user.getId());
     } else {
       // insert
-      String query = "INSERT INTO contact (firstName, lastName, email, role) VALUES (?, ?, ?, ?)";
+      String query = "INSERT INTO users (firstName, lastName, email, role) VALUES (?, ?, ?, ?)";
       jdbcTemplate.update(query, user.getFirstName(), user.getLastName(), user.getEmail(), user.getRole());
     }
   }
 
   @Override
   public void delete(int userId) {
-    String query = "DELETE FROM contact WHERE id=?";
+    String query = "DELETE FROM users WHERE id=?";
     jdbcTemplate.update(query, userId);
   }
 
